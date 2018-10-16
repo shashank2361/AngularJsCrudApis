@@ -1,0 +1,61 @@
+<div class="row">
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-itle">Enter the Title and the body</h3>
+            </div>
+
+            <div class="panel-body">
+                <div class=form-group>
+                    <form name="postForm" ng-submit=postCtrl.submit()>
+                        <p>
+                            Title : <input name="title" type="text" class="form-control" ng-model="postCtrl.title" required>
+                            <div class="alert alert-danger" role="alert" ng-show="postForm.title.$invalid &&  ( !postForm.title.$pristine || postForm.title.$touched ) ">
+                                <strong>The title is required!</strong> Enter Title and try submitting again.
+                            </div>
+                        </p>
+                        <p>
+                            Body <input type="text" name="body" class="form-control" ng-model="postCtrl.body" required>
+                            <div class="alert alert-danger" role="alert" ng-show="postForm.body.$invalid &&  ( !postForm.body.$pristine || postForm.body.$touched ) ">
+                                <strong>The Body is required!</strong> Enter Body and try submitting again.
+                            </div>
+                        </p>
+                        <br>
+                        <input type="submit" class="btn btn-success" value="Add Record">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="panel panel-success" ng-show="postCtrl.isLoading == true ">
+            <div class="panel-heading">Record Added </div>
+            <div class="panel-body">
+
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Id</td>
+                        <td>{{postCtrl.note.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td> {{postCtrl.note.title }}</td>
+                    </tr>
+                    <tr>
+                        <td>body</td>
+                        <td>{{postCtrl.note.body }}</td>
+                    </tr>
+                    <tr>
+                        <td>updatedAt</td>
+                        <td>{{postCtrl.note.updatedAt }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>createdAt</td>
+                        <td>{{postCtrl.note.createdAt }} </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h4><a href="#/"> Back to Home</a></h4>
+    </div>

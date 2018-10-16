@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-itle">Edit</h3>
+    </div> <br>
+
+    <div class="panel-body">
+        <form ng-submit=editCtrl.patchRecord()>
+            <div class="form-group">
+                <label>Id:</label>
+                <input type="text" ng-model="editCtrl.note.id"   class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" ng-model="editCtrl.note.title" class="form-control" id="title">
+            </div>
+            <div class="form-group">
+                <label for="body">Body:</label>
+                <input type="text" ng-model="editCtrl.note.body" class="form-control" id="body">
+            </div>
+            <br>
+            <input type="submit" class="btn btn-success" value="Update Record">
+        </form>
+    </div>
+</div>
+
+<div class="panel panel-success" ng-show="editCtrl.isLoading === true">
+    <div class="panel-heading">Record Updated </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <tr>
+                <td>Id</td>
+                <td>{{editCtrl.note.id }}</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td> {{editCtrl.note.title }}</td>
+            </tr>
+            <tr>
+                <td>body</td>
+                <td>{{editCtrl.note.body }}</td>
+            </tr>
+            <tr>
+                <td>updatedAt</td>
+                <td>{{editCtrl.note.updatedAt }}</td>
+            </tr>
+
+            <tr>
+                <td>createdAt</td>
+                <td>{{editCtrl.note.createdAt }} </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<h4><a href="#/"> Back to Home</a></h4>

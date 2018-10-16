@@ -1,0 +1,29 @@
+<div class="">
+    <div class="col-lg-16">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h4>Title : {{noteObject.title}} </h4>
+                    </div>
+
+                    <div class="btn ">
+
+                        <a href="#/edit/{{noteObject.id}}" class="btn btn-info"><i class="far fa-edit "></i> Edit</a>
+                        <button class="btn btn-sm btn-danger" ng-confirm-click="Are you sure to delete this record  ?" confirmed-click="removeNodeFunction({ Noteid : {{noteObject.id }}})"><i class="fas fa-trash-alt"></i> Delete</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+                id : {{noteObject.id}} <br>
+                Body : {{noteObject.body}} <br>
+                CreatedAt : {{noteObject.createdAt}} <br>
+                UpdatedAt : {{noteObject.updatedAt}} <br>
+
+            </div>
+        </div>
+    </div>
+
+</div>
